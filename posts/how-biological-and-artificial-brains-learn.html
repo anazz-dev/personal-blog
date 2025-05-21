@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad M. Nazzal — How Biological and Artificial Brains Learn</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Ahmad M. Nazzal</a></h1>
+            <div class="theme-toggle">
+                <label for="theme-switch" class="theme-switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </header>
+
+        <div class="contents">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#biological neural networks">Biological Neural Networks</a></li>
+                <li><a href="#artificial neural networks">Artificial Neural Networks</a></li>
+                <li><a href="#human language learning">Human Language Learning</a></li>
+                <li><a href="#call-it">Call It What It Is</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <article class="post">
+                <h1 class="post-title">How Biological and Artificial Brains Learn</h1>
+                <p class="post-date">April 02, 2025</p>
+
+                <div class="post-content">
+                    <p>Understanding how biological neural networks (brains) learn can shed light on how artificial neural networks (ANNs) learn – and vice versa. Both systems adapt by changing the strength of connections based on experience.</p>
+                    <p>Here we explore the parallels between learning in real neurons and in artificial neurons, then apply this analogy to human language learning. We’ll discuss Eric Kandel’s discoveries on synaptic plasticity, Donald Hebb’s principle of “fire together, wire together,” and how ANN algorithms like backpropagation implement similar ideas. Finally, we discuss how repetition, multi-sensory input, feedback, and social interaction strengthen neural connections during language acquisition.</p>
+
+                    <h2 id="biological neural networks">Biological Neural Networks: Synaptic Plasticity and Hebb’s Rule</h2>
+                    <p>Neuroscience shows that learning in the brain happens through synaptic plasticity – the ability of synapses (connections between neurons) to change their strength or structure in response to activity.</p>
+                    <p>Nobel laureate Eric Kandel demonstrated this in the sea slug Aplysia. In one classic experiment, touching the slug’s siphon repeatedly led to a weaker gill-withdrawal reflex (the slug “habituated” to the touch). Kandel found that the sensory neuron-to-motor neuron synapse released less neurotransmitter with repeated stimulation, making the reflex weaker.</p>
+                    <p>Conversely, if the slug received an intense stimulus (like a tail shock) before touching the siphon, it showed an exaggerated gill withdrawal. With repeated pairings, this enhancement (called sensitization) lasted for days – a simple form of long-term memory. The basis of this long-term memory was the formation of new synapses (additional physical connections) between the sensory and motor neurons.</p>
+                    <p>In other words, short-term learning adjusted the effectiveness of existing synapses (by releasing more or less neurotransmitter), while long-term learning literally grew new synaptic connections, a change requiring new proteins and gene activation.</p>
+                    <p>Kandel’s work provided concrete evidence that memory is encoded as changes in synaptic strength and number, confirming the idea that “memory depends on synaptic plasticity,” as later summarized by researchers.</p>
+                    <p>Decades before Kandel’s experiments, psychologist Donald Hebb had proposed a simple rule for how neurons might adjust their connections during learning. Hebb’s rule (from 1949) is often summarized as “neurons that fire together, wire together.”</p>
+                    <p>In more technical terms, if neuron A repeatedly and persistently helps trigger neuron B to fire, the connection from A to B will strengthen over time. This idea anticipated later findings of activity-dependent synaptic strengthening.</p>
+                    <p>We now know many cellular mechanisms that implement Hebb’s rule—for example, if two neurons frequently activate together, the synapse between them might grow more receptor proteins or release more transmitter, making future signaling more efficient.</p>
+                    <p>Hebb’s principle of coincident activity driving connection strength is a cornerstone of associative learning in the brain. It also foreshadowed phenomena like spike-timing-dependent plasticity, where precisely timed firing can increase or decrease synaptic efficacy.</p>
+                    <p>In short, biology’s lesson is: experiences cause certain neural pathways to be used repeatedly, and those pathways get reinforced. This forms the neural basis of learning and memory in humans and other animals.</p>
+
+                    <h2 id="artificial neural networks">Artificial Neural Networks: Learning with Backpropagation</h2>
+                    <p>Artificial neural networks were inspired by these brain principles. An ANN consists of simplified “neurons” (nodes) connected by weights (analogous to synapses). Each weight is a number that represents the strength of connection between two units. Initially, these weights might be set randomly.</p>
+                    <p>Learning in an ANN means adjusting the weights so that the network becomes better at whatever task it’s trained on (for example, recognizing images or translating language). How do artificial networks know which connections to change, and by how much? They use a training algorithm called backpropagation (back-propagation of error).</p>
+                    <p>When an ANN is trained, it’s typically shown many input examples (say, an image or a sentence) and the desired output (the label of the image or a translation of the sentence). The network makes a prediction, and then the difference between the prediction and the true answer is calculated as an error or loss. Backpropagation allows the network to use this error to update its connections.</p>
+                    <p>In essence, the algorithm works backward: it computes how much each weight contributed to the error and adjusts it slightly in the direction that reduces the error. Formally, “backpropagation computes the gradient of a loss function with respect to the weights of the network for a single input–output example, and does so efficiently, computing the gradient one layer at a time, iterating backward from the last layer.”</p>
+                    <p>This gradient tells the network whether a given weight should be increased or decreased to make the output more accurate. By applying these tiny adjustments (via a method called gradient descent) over many iterations and examples, the ANN gradually “learns” the task – its performance improves because the connection weights have been tuned appropriately.</p>
+                    <p>An intuitive way to see the analogy with biological learning is to think of backpropagation as the role of a teacher or feedback signal in training a brain.</p>
+                    <p>Hebbian learning in neurons is unsupervised – connections strengthen just from simultaneous activity – whereas backpropagation is a form of supervised learning – the network only knows how to change weights after comparing its output to a given correct answer.</p>
+                    <p>In real life, learning often combines both: sometimes we learn from association (Hebb’s way), and other times we learn from feedback on our mistakes. The ANN’s advantage is that we can explicitly compute a clear feedback signal (the error gradient) for every connection.</p>
+                    <p>While brains don’t literally calculate gradients, the outcome is analogous: connections that lead to better outcomes are reinforced, and those that lead to errors are adjusted.</p>
+                    <p>This ANN training process has enabled machines to reach human-level (and beyond) performance on many tasks. Modern deep learning systems, from speech recognizers to image classifiers, all rely on backpropagation to continually refine the billions of weights in their networks – a high-speed, large-scale echo of how experience sculpts synapses in a brain.</p>
+
+                    <h2 id="human language learning">Human Language Learning: A Neural Network Perspective</h2>
+                    <p>How do these principles play out when a child (or adult) learns a language?</p>
+                    <p>Language learning is a complex cognitive feat, but at its core it is a neural learning process – the brain’s networks are adjusting in response to experience with sounds, words, and meanings.</p>
+                    <p>In fact, many strategies we use in language learning echo the ideas above: repetition of stimuli (practice), multi-modal association (linking words with images, sounds, gestures), and feedback from others all help “wire” language into the brain’s neural circuits.</p>
+                    <p>Unlike a simple ANN, the human brain isn’t trained on millions of text examples with an explicit loss function – instead, it learns gradually from everyday communication and interaction. Nevertheless, the same neural rules apply: frequently used connections get stronger, rarely used ones may weaken; timely feedback signals (like a correction or a communicative success) help tune the system; and richer, multi-sensory contexts create more robust neural representations.</p>
+
+                    <h3>Repetition and Practice</h3>
+                    <p>Repeated exposure to words and phrases strengthens the neural pathways for those language patterns. Experiments using brain imaging show that learning new words through repetition induces neuroplastic changes in the language networks of the brain.</p>
+                    <p>For example, in one study, adults learning foreign vocabulary by repeatedly hearing and speaking words showed increased integration in their brain’s language areas after just a few weeks of practice. The adage “practice makes perfect” has a neural basis: practice reinforces the synapses involved in producing and recognizing the sounds and structures of a language.</p>
+
+                    <h3>Multi-Modal Input (Learning with Many Senses)</h3>
+                    <p>Human language learning is greatly enhanced by combining multiple sensory channels – hearing a word, seeing an image or text, and even using gestures. This “multimodal enrichment” can significantly improve learning outcomes, as demonstrated by numerous studies. For instance, teaching a new vocabulary word with a relevant picture or a hand motion not only makes learning more engaging, it also recruits additional brain regions (visual or motor areas) that reinforce the memory. Neuroscience findings show that if you learn a word while performing a matching gesture, later hearing that word will activate motor regions of your brain; this reactivation of multiple areas is believed to make the memory stronger and longer-lasting. The brain is essentially encoding the word in a richer network of associations. In essence, learning language with all your senses – listening, speaking, seeing, and moving – creates a deeper neural imprint than with one modality alone.</p>
+
+                    <h3>Feedback and Error Correction</h3>
+                    <p>Just as backpropagation relies on error feedback to adjust an ANN, human learners rely on social feedback to refine their language skills. Children don’t learn in isolation; they constantly get signals of communication success or failure from caregivers and peers. Studies of early language development suggest that children improve their linguistic abilities by leveraging such feedback. When a toddler says a word and the parent responds (either affirming understanding or indicating confusion), it provides a cue to the child. Over time, these cues guide the child to correct errors and sharpen their speech. In conversational interactions, kids use explicit or implicit feedback – smiles, corrections, requests for clarification – to adjust their language. For example, if a child calls a dog “gow” and the adult says “Yes, that’s a dog,” the child receives a gentle correction. This is akin to an error signal that helps update the “weights” in the child’s neural network for language. Such feedback-driven adjustments are crucial for mastering pronunciation, grammar, and appropriate word use.</p>
+
+                    <h3>Social Interaction</h3>
+                    <p>Importantly, human language learning is fundamentally social. A famous finding by neuroscientist Patricia K. Kuhl and colleagues is that infants learn speech sounds much better from human interaction than from passive listening (like TV or audio recordings). In fact, children require a social setting and interaction with a human being to kick-start their neural computations for learning language. The engagement, eye contact, turn-taking, and emotional connection in a live interaction appear to trigger the brain’s language learning mechanisms in ways that solitary exposure does not. Social interaction provides not only feedback, but also motivation and context – babies and children are driven to communicate, and this drive focuses their attention and memory. From a neural perspective, social interaction likely increases dopamine and other neuromodulators that enhance plasticity, making the brain more receptive to forming new language memories. Thus, language learning is not just data input; it’s a dynamic, interpersonal process that tunes the brain’s networks through real-world use. In educational settings, this is why immersive conversation practice and interactive reading sessions are so effective for language learners – they mimic the natural, social nature of language acquisition.</p>
+
+                    <p>Overall, human language learning can be seen as a multi-layered neural training process. Repetition provides the frequency data the brain needs to detect patterns (akin to increasing weights for common patterns), multi-modal cues create redundant neural links that make memories resilient, feedback offers error signals to correct and refine usage, and social interaction supplies context and motivation that engage the learner’s brain at a high level.</p>
+
+                    <p>These elements work together to encode language in the brain’s neural networks, much as an engineered neural network improves through iterative training. Notably, modern AI language models also benefit from some of these principles: for instance, recent models learn better when trained on text paired with images (multi-modal learning), and they can be fine-tuned with human feedback to improve their responses (analogous to a teacher’s correction). Such parallels highlight the deep connection between how natural and artificial systems learn to process language.</p>
+
+                    <h2>Bridging Neuroscience and AI for Better Learning</h2>
+                    <p>Drawing connections between biological and artificial neural networks is more than just an analogy – it’s a two-way street that drives progress in both neuroscience and machine learning.</p>
+                    <p>The concept of synaptic plasticity gave inspiration to early ANN pioneers, and today ANN research (with algorithms like backpropagation) provides theoretical frameworks to understand how complex learning might be orchestrated in the brain.</p>
+                    <p>Both domains suggest that learning means changing connections: whether it’s a synapse becoming more responsive or a weight being nudged in value, the network is storing information from experience. By examining human learning (like language acquisition) through the lens of neural networks, we gain a clearer picture of the ingredients that matter – repetition, rich sensory input, timely feedback, social context – all of which can inform better educational strategies and improved AI training methods.</p>
+                    <p>As one interdisciplinary review noted, “recently uncovered neuroscientific mechanisms may inspire the updating of computational theories of learning,” and an evidence-based synthesis of brain and AI research “will lead to the optimization of learning and teaching strategies in the future, for both humans and artificial systems.”</p>
+                    <p>In essence, the better we understand how brains learn, the better we can design machines to learn – and conversely, advances in AI are giving us new models to hypothesize how learning happens inside our heads. This synergy is what “Brain Matters” is all about: unlocking the secrets of neural networks, biological and artificial, to enrich our understanding of intelligence and to apply those insights for the benefit of both.</p>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
