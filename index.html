@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="description" content="Blog of Ahmad Nazzal">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Nazzal</title>
+
+    <style data-name="retro-inspired-roboto-mono">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --width: 720px;
+            --font-main: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            --font-scale: .9em;
+            --background-color: #fff;
+            --heading-color: #232333;
+            --text-color: #232333;
+            --muted-color: #666;
+            --link-color: #0000cc;
+            --visited-color: #0000cc;
+            --rule-color: #232333;
+            --code-background-color: #f2f2f2;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { background: var(--background-color); }
+
+        body {
+            font-family: var(--font-main);
+            font-size: var(--font-scale);
+            margin: auto;
+            padding: 20px;
+            max-width: var(--width);
+            text-align: left;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.5;
+            font-variant-ligatures: none;
+        }
+
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px dotted var(--rule-color);
+        }
+
+        .title,
+        .title:visited,
+        .title:hover {
+            color: var(--heading-color);
+            text-decoration: none;
+        }
+
+        .title h1 {
+            margin: 0 0 .35em;
+            font-size: 1.5em;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        nav p { margin: 0; }
+        nav a { margin-right: 8px; }
+
+        main { line-height: 1.6; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-main);
+            color: var(--heading-color);
+        }
+
+        p { margin: 1em 0; }
+
+        section.home-copy {
+            line-height: 1.6;
+        }
+
+        section.home-copy p {
+            margin: 1em 0;
+        }
+
+        a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 2px solid #3273dc;
+        }
+
+       a:visited {
+        color: inherit;
+        }
+
+        a:hover,
+        a:focus {
+            color: #000088;
+        }
+
+        strong, b { color: var(--heading-color); }
+        em, i { color: inherit; }
+
+        section[data-page="projects"] h2 {
+            margin: 1.8em 0 .55em;
+            font-size: 1em;
+            line-height: 1.35;
+        }
+
+        ul, ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+
+        li { margin: .35em 0; }
+
+        ul.blog-posts {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.blog-posts li {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        ul.blog-posts li span {
+            flex: 0 0 130px;
+            opacity: .7;
+            white-space: nowrap;
+        }
+
+        article.post { max-width: 100%; }
+
+        article.post .post-header {
+            margin: 0 0 2em;
+            padding: 0;
+            border: 0;
+        }
+
+        article.post h1 {
+            margin: 0 0 .5em;
+            font-size: 1.5em;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        article.post .post-date {
+            margin: 0;
+            font-size: 1em;
+            opacity: .7;
+        }
+
+        article.post .post-body {
+            font-family: var(--font-main);
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        article.post .post-body p { margin: 1em 0; }
+
+        article.post .post-body h2,
+        article.post .post-body h3 {
+            margin: 1.7em 0 .65em;
+            font-size: 1em;
+            line-height: 1.45;
+        }
+
+        article.post .post-body blockquote {
+            border-left: 1px solid #999;
+            color: #222;
+            padding-left: 20px;
+            margin: 1em 0;
+            font-style: italic;
+        }
+
+        article.post .post-body blockquote p { margin: .75em 0; }
+
+        article.post .post-body code {
+            font-family: var(--font-main);
+            padding: 2px;
+            background-color: var(--code-background-color);
+            color: #222;
+            border-radius: 3px;
+        }
+
+        article.post .post-nav {
+            margin-top: 2.4em;
+            padding-top: 1em;
+            border-top: 1px dashed var(--rule-color);
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px dashed;
+        }
+
+        @media (max-width: 560px) {
+            body { padding: 16px; }
+            header { margin-bottom: 30px; padding-bottom: 16px; }
+            ul.blog-posts li { display: block; margin-bottom: 12px; }
+            ul.blog-posts li span { display: block; margin-bottom: 1px; }
+            article.post h1 { font-size: 1.35em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="title" href="#home" aria-label="Nazzal home">
+            <h1>Nazzal</h1>
+        </a>
+        <nav aria-label="Primary navigation">
+            <a href="#home" data-nav="home">home</a>
+            <a href="#blog" data-nav="blog">blog</a>
+            <a href="#projects" data-nav="projects">projects</a>
+        </nav>
+    </header>
+
+    <main>
+        <section data-page="home" class="home-copy">
+            <p>hi.</p>
+            <p>i am Ahmad!</p>
+            <p>i studied medicine and neuroscience. i’m interested in languages, art, music, writing, active inference, intelligence, and philosophy.</p>
+            <p>here i share my writing, research, and thoughts. thank you for reading.</p>
+        </section>
+
+        <section data-page="blog" hidden>
+            <ul class="blog-posts">
+                <li>
+                    <a href="#post-machines">the machines we choose to build</a>
+                </li>
+                <li>
+                    <a href="#post-dependence">artificial intelligence: the next digital dependency</a>
+                </li>
+                <li>
+                    <a href="#post-learning">rethinking ‘learning’ in machine learning</a>
+                </li>
+                <li>
+                    <a href="#post-confabulates">ai confabulates</a>
+                </li>
+            </ul>
+        </section>
+
+        <section data-page="projects" hidden>
+            <ul>
+                <li><a href="https://www.nature.com/articles/s41598-025-15283-3">scan-rescan reliability assessment of brain volumetric analysis across scanners and software solutions</a></li> 
+                <li><a href="https://www-sciencedirect-com.zulib.idm.oclc.org/science/article/pii/S001094521730357X">reach and grasp deficits following damage to the dorsal pulvinar</a></li>
+                <li><a href="https://aclanthology.org/2025.arabicnlp-sharedtasks.37/">AraBERT-CORAL for fine grained arabic readability</a></li>
+                <li><a href="https://journal.emwa.org/medical-devices/biotechnology/article/11865/biotechnology-v2.pdf">artificial intelligence, biotechnology, and trust</a> </li>
+                <li><a href="https://conference.pixel-online.net/FOE/acceptedabstracts_scheda.php?id_abs=8337">first evidence of reliability and validity of SARD</a> </li>
+                <li><a href="https://www.abstractsonline.com/pp8/index.html#!/4071/presentation/22604">modality specific neural signals of evidence accumulation for spatial decisions</a></li>
+                <li><a href="https://zenodo.org/records/20186339">medical LLM metacognition is multidimensional</a></li>
+                <li><a href="https://zenodo.org/records/20072971">large language models show metacognitive sensitivity in medical reasoning</a></li>
+                <li><a href="https://zenodo.org/records/18672809">seeing without knowing</a></li>
+                <li><a href="https://zenodo.org/records/17171334">a path towards autonomous machine intelligence in medicine</a></li>
+                <li><a href="https://zenodo.org/records/14823265">comparative evaluation of ChatGPT-4o and DeepSeek-R1 for emergency severity index (ESI) triage classification</a></li>
+                <li><a href="https://www.sciencedirect.com/science/article/pii/S2590291125010125">a systematic review of teaching and learning in the context of arabic diglossia</a></li>
+                <li><a href="https://neuroscience4kids.com/">neuroscience activity books</a></li>
+                <li><a href="https://www.dgnvirtualmeeting.org/programme/session/110497">artificial intelligence in Neurology (DGN) Berlin</a></li>
+                <li><a href="https://www.linkedin.com/events/ailiteracy-navigatingtheeuaiact7335946067483451392/comments/">doctors for doctors: ai literacy — navigating the EU AI Act</a></li>
+                <li><a href="https://open.spotify.com/episode/26zvpHtPv2lFNu4wJs7b2Y">open medical data and ai</a></li>
+                <li><a href="https://www.youtube.com/watch?v=qi0c4aD0-u0&amp;t=311s&amp;ab_channel=RabeaAkram">biology of decision making</a></li>
+                <li><a href="https://youtu.be/WitxsSSIuis">build a brain bleeding detector from scratch</a></li>
+                <li><a href="https://zai.zu.ac.ae/Home/TrainingDetails?key=hefVogsZS3NSvEk7Np8TuQ%253d%253d">the neural basis of language acquisition</a></li>
+                <li><a href="https://clinicalaiacademy.com/">clinical ai academy</a></li>
+                <li><a href="https://ediss.uni-goettingen.de/handle/11858/00-1735-0000-0023-3EB6-6?show=full">PhD thesis</a></li>
+            </ul>
+            <a href="https://www.linkedin.com/in/drahmadnazzal/">linkedIn</a> · <a href="https://orcid.org/0000-0002-6558-0734/">orcid</a></p>
+        </section>
+
+       <section data-page="post-machines" hidden>
+            <article class="post">
+                <header class="post-header">
+                    <h1>The Machines We Choose to Build</h1>
+                    <p class="post-date">
+                        <time datetime="2026-03-06">March 06, 2026</time>
+                    </p>
+                </header>
+                <div class="post-body">
+                    <p>In the Butlerian Jihad, humanity defeats the thinking machines, and the Orange Catholic Bible lays down its second commandment: “Thou shalt not make a machine in the likeness of a human mind.” Frank Herbert wrote Dune in 1965, when this was fiction.</p>
+                    <p>Today, in early 2026, artificial intelligence (AI) is no longer science-fiction; it is embedded in our daily life, and the idea that such systems might one day, not in the so distant future, be able to act against us feels far less abstract.</p>
+                    <p>The pace of AI is unmistakably accelerating. While public narratives still promise cures for disease and breakthroughs across science, the largest investments continue to flow into military applications—autonomous surveillance systems, tactical decision-making engines, and, increasingly, weaponized autonomous platforms. It is worth noting that the EU AI ACT regulates all aspects of AI expect for military use.</p>
+                    <p>AI, however, is more dangerous than nuclear weapons. A nuclear device cannot design a more advanced nuclear device; an AI system can, and already does, contribute to the improvement of successor models. A nuclear device cannot copy itself; advanced AI, if given the wrong affordances, can replicate, migrate, and persist.</p>
+                    <p>Despite all this, I remain curious about AI. These systems offer unprecedented tools for understanding computation, cognition, and the brain. I am optimistic that AI could fix the global healthcare system. But the central question persists: do we truly need to build something with agency that mirrors our own minds? Or would humanity be better off by focusing on narrow, domain-specific AI?</p>
+                    <p>Narrow AI already delivers. These systems do not need human-like agency to be transformative. The insistence on human-level intelligence or even beyond human-level intelligence seems motivated less by scientific necessity than by a mixture of ambition, competition, and myth. And myths, historically, have been poor guides for technological restraint.</p>
+                    <p>The challenge ahead is philosophical and ethical. We must decide what kinds of minds we are willing to construct, and for what purposes. Narrow systems can amplify human capability. General systems, if pursued recklessly, may compete with it. The choice is still ours but for how long?</p>
+                </div>
+                <p class="post-nav"><a href="#blog">← back to blog</a></p>
+            </article>
+        </section>
+
+        <section data-page="post-dependence" hidden>
+            <article class="post">
+                <header class="post-header">
+                    <h1>Artificial Intelligence: The Next Digital Dependency</h1>
+                    <p class="post-date"><time datetime="2026-02-06">Feb 06, 2026</time></p>
+                </header>
+                <div class="post-body">
+                    <p>We know by now that social media can be addictive, not in the DSM-5 yet though. As we march into the world of artificial intelligence (AI) being used more in our daily lives, could it become our next digital dependency?</p>
+                    <p>Generative AI tools such as ChatGPT and Gemini are powerful. Need to write an email, solve a coding problem, compose music, or generate artwork? AI delivers on demand. This ease feels almost magical. You cast a spell, and there it is.</p>
+                    <p>Unlike social media dependency, AI dependence is sneaky. AI produces text, code, presentations, and analyses. It saves time. It boosts confidence. It makes us feel more innovative.</p>
+                    <p>But AI is not a calculator, a spell-checker, a GPS, or a search engine; all of these offload specific cognitive functions. Generative AI is unprecedented in its ability to offload cognitive tasks.</p>
+                    <p>I suspect it could lead to dependence because generative AI outputs are probabilistic and occasionally surprising. This unpredictability, the gap between what we expect and what we receive, creates variable rewards similar to those in gambling, a mechanism known to maximize engagement. Second, conversational interfaces used in Chatbots encourage anthropomorphism. We tend to attribute human qualities to such systems and even trust systems that use social cues.</p>
+                    <p>The line between human and machine was never thinner.</p>
+                    <p>We are at a crossroads. Do we want to outsource our thinking entirely, or amplify our own cognitive work? The stakes are high. It is about preserving expertise, critical thinking, and human agency in an increasingly automated world.</p>
+                </div>
+                <p class="post-nav"><a href="#blog">← back to blog</a></p>
+            </article>
+        </section>
+
+        <section data-page="post-learning" hidden>
+            <article class="post">
+                <header class="post-header">
+                    <h1>Rethinking ‘Learning’ in Machine Learning</h1>
+                    <p class="post-date"><time datetime="2026-01-13">Jan 13, 2026</time></p>
+                </header>
+                <div class="post-body">
+                    <p>As artificial intelligence (AI) advances, comparisons between human learning and machine learning become increasingly relevant. While it might be tempting to think that machines learn similarly to humans, the reality is far more complex.</p>
+                    <p>In the 1940s, Donald Hebb proposed that, “neurons that fire together, wire together,” illustrating how experiences strengthen connections within the brain, enabling learning. This foundational understanding of human learning contrasts with the development of AI.</p>
+                    <p>The perceptron, introduced by Frank Rosenblatt, a psychologist, in 1958, marked a seminal advancement, simulating a basic form of learning in machines by adjusting responses based on outcomes.</p>
+                    <p>In around that time, the term “machine learning” became popular. Arthur Samuel, worked in 1959 on programming a computer to improve at the game checkers. His work coined the term “machine learning” and he wrote: “A computer can be programmed so that it will learn to play a better game of checkers than can be played by the person who wrote the program.”</p>
+                    <p>Later, and in 1960s and 1970s, neural networks and deep learning started to emerge as subsets of the field AI. These are described as attempts to mimic how the brain works by their developers.</p>
+                    <p>However, the debate between Karl Friston, a neuroscientist, and Yann LeCun, a computer scientist, at Davos 2024 underscores a critical divide in understanding AI’s capabilities.</p>
+                    <p>Friston criticizes deep learning for lacking a framework to account for the uncertainties inherent in human cognition, a fundamental aspect of our learning process.</p>
+                    <blockquote><p>“So, I think Deep Learning is rubbish, largely because it doesn’t have the calculus of the machinery or the physics to have a calculus of beliefs, a calculus of inference, of planning, of situational awareness. And crucially, if you don’t have math or an engineering toolkit that can quantify what you know and what you don’t know, namely, encode the uncertainty that underwrites your sense making, you’ll never know how to act in terms of getting the right kind of information”.</p></blockquote>
+                    <p>Friston proposes, in his free-energy principle theory, that the human brain operates on predictive coding, constantly making hypotheses about future events to minimize surprises. This is akin to learning through trial and error, where success and mistakes refine our predictions and responses.</p>
+                    <p>On the other hand, LeCun highlights the immense data processing and learning capabilities of AI, yet acknowledges its shortfall in emulating the depth of human learning, which integrates experience, observation, and interaction.</p>
+                    <p>This divergence points to a core issue: the term “machine learning”, while practical, might suggest a cognitive engagement and understanding similar to human learning, is misleading.</p>
+                    <p>Machines excel at identifying patterns and making predictions from data, but they lack the ability to derive meaning, purpose, or undergo experiential growth, all are essential components of human cognition.</p>
+                    <p>Acknowledging these differences is vital for setting realistic expectations for AI’s capabilities while avoiding delusional beliefs. It also guides the ethical development and deployment of AI technologies. The quest to create machines that emulate human learning continues, but recognizing the distinct nature of human cognition is crucial for the progress of AI.</p>
+                    <p><em>This article was published originally online in 2024 at theyuan.com.</em></p>
+                </div>
+                <p class="post-nav"><a href="#blog">← back to blog</a></p>
+            </article>
+        </section>
+
+        <section data-page="post-confabulates" hidden>
+            <article class="post">
+                <header class="post-header">
+                    <h1>AI Confabulates</h1>
+                    <p class="post-date">
+                        <time datetime="2025-05-21">May 21, 2025</time>
+                    </p>
+                </header>
+                <div class="post-body">
+                    <p>
+                        Since the introduction of ChatGPT and large language models, I will refer to here as AI, they have made a grand entry into nearly everyone's life.
+                        You have probably noticed they come with a disclaimer: they make mistakes. For some reason, these mistakes have been labeled "hallucinations." As usual, the field of AI naively borrows from neuroscience and psychology. In fact, calling these mistakes "hallucinations" is more poetic than precise; the proper term is confabulations.
+                    </p>
+                    <p>
+                        According to the Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR, 2022), hallucinations are defined as perceptual experiences that occur in the absence of an external stimulus and are experienced as real.
+                        People with conditions like schizophrenia may hear voices that no one else hears. Others with Parkinson's disease or certain types of dementia might see things that aren't really present. Some people going through drug withdrawal might feel bugs crawling on their skin, and a strange smell with no source can sometimes be an early sign of a seizure disorder.
+                    </p>
+                    <p>
+                        The DSM-5-TR does not provide a formal definition of confabulation. It is not listed as a standalone diagnostic criterion or disorder.
+                        Confabulation is primarily a neuropsychological concept rather than a psychiatric diagnostic term, and it is more extensively discussed in clinical neuropsychology literature than in DSM manuals.
+                        In neuropsychology, Schnider in 2005 defined confabulations as the unintentional fabrication of memories, typically to fill in gaps caused by amnesia.
+                        Korsakoff's syndrome is a brain disorder often caused by long-term alcohol misuse, leading to severe memory problems. A person with this condition might firmly believe they had breakfast that morning at a favorite café, which actually closed years ago.
+                        They are not trying to lie. Their brain is unknowingly filling in the blanks. This is known as confabulation. It is when someone creates false memories without realizing it, to make sense of gaps in their memory.
+                    </p>
+                    <p>
+                        AI does not know anything in the human sense. What it does is predict. When a chatbot generates a false but plausible answer, it is not sensing a ghost or hearing voices that are not there.
+                        It is predicting an output from an input based on patterns in its training data. It is trying to fill in what should come next, even if it makes it up, just as a confabulating brain fills in what must have happened.
+                    </p>
+                    <p>
+                        Using "hallucination" to describe AI errors encourages an idea of machines, as if they had inner worlds and private perceptions. "Confabulation" is more accurate and more useful. It reminds us these systems generate text, not truth as they do not know what is real in a human sense. They stitch together words based on statistical echoes, not reality checks.
+                        Understanding this helps developers build better tools. Ones that flag uncertainty or backtrack when unsure. And it helps users stay clear-eyed: the machine is not dreaming or lying. It is guessing, with confidence but no conscience.
+                        So let us drop the romance of "hallucination." AI does not perceive. It predicts. When it gets things wrong, it is not deluded. It is making things up. It is confabulating. And just as in medicine, proper treatment begins with an accurate diagnosis. Therefore, naming the problem correctly is the first step to addressing it.
+                    </p>
+                </div>
+
+                <p class="post-nav"><a href="#blog">← back to blog</a></p>
+            </article>
+        </section>
+    </main>
+
+
+    <script>
+        (() => {
+            "use strict";
+
+            const pageTitles = {
+                home: "Nazzal",
+                blog: "Blog – Nazzal",
+                projects: "Projects – Nazzal",
+                "post-dependence": "Artificial Intelligence: The Next Digital Dependency? – Nazzal",
+                "post-learning": "Rethinking ‘Learning’ in Machine Learning – Nazzal",
+                "post-machines": "The Machines We Choose to Build – Nazzal",
+                "post-confabulates": "AI Confabulates – Nazzal"
+            };
+
+            const pages = Array.from(document.querySelectorAll("[data-page]"));
+            const navLinks = Array.from(document.querySelectorAll("[data-nav]"));
+
+            function showPage() {
+                const requestedPage = window.location.hash.slice(1).toLowerCase();
+                const activePage = Object.hasOwn(pageTitles, requestedPage) ? requestedPage : "home";
+
+                pages.forEach((page) => {
+                    page.hidden = page.dataset.page !== activePage;
+                });
+
+                navLinks.forEach((link) => {
+                    if (link.dataset.nav === activePage) {
+                        link.setAttribute("aria-current", "page");
+                    } else {
+                        link.removeAttribute("aria-current");
+                    }
+                });
+
+                document.title = pageTitles[activePage];
+                window.scrollTo(0, 0);
+            }
+
+            window.addEventListener("hashchange", showPage);
+            showPage();
+        })();
+    </script>
+</body>
+</html>
